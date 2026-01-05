@@ -1,7 +1,7 @@
 import "./App.css";
 import "./styles.css";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate,
