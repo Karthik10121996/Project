@@ -1,4 +1,3 @@
-import React from "react";
 import Loading from "../assets/loading2.gif";
 import UseFetch from "../components/UseFetch";
 import usePagination from "../components/UsePagination";
