@@ -6,7 +6,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { useContext } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useContext, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeContext } from "./components/ThemeContext";
@@ -15,9 +17,18 @@ import Products from './pages/Products';
 import Users from "./pages/Users";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
+import Animation from "./pages/Animation";
 
 function App() {
   const { theme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration in ms
+      easing: "ease-in-out", // easing style
+      once: true, // whether animation should happen only once
+    });
+  }, []);
 
   return (
     <>
@@ -30,6 +41,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/animation" element={<Animation />} />
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

@@ -18,6 +18,9 @@ function Home() {
         <Link className="link" to="/users">
           Fetch Users
         </Link>
+        <Link className="link" to="/animation">
+          Animation
+        </Link>
       </div>
       <div>
         <a href="https://vite.dev" target="_blank">
